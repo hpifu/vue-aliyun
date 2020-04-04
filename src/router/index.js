@@ -13,8 +13,12 @@ const routes = [
     component: () => import("../components/IMM")
   },
   {
-    path: "/data",
-    component: () => import("../components/LocalStore")
+    path: "/credential",
+    component: () => import("../components/Credential")
+  },
+  {
+    path: "/endpoint",
+    component: () => import("../components/Endpoint")
   }
 ];
 

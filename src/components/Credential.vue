@@ -11,7 +11,7 @@
             color="green"
             @click="createCredential"
           >
-            <v-icon>mdi-open-in-new</v-icon>
+            <v-icon>mdi-plus</v-icon>
           </v-btn>
         </v-flex>
         <v-flex xs3>
@@ -27,9 +27,16 @@
           </v-btn>
         </v-flex>
         <v-flex xs3>
-          <v-btn class="ma-2" outlined x-small fab color="error" @click="cancel"
-            ><v-icon>mdi-cancel</v-icon></v-btn
+          <v-btn
+            class="ma-2"
+            outlined
+            x-small
+            fab
+            color="error"
+            @click="cancel"
           >
+            <v-icon>mdi-undo</v-icon>
+          </v-btn>
         </v-flex>
         <v-flex xs3>
           <v-btn
@@ -40,7 +47,7 @@
             color="error"
             @click="deleteCredential"
           >
-            <v-icon>mdi-delete</v-icon>
+            <v-icon>mdi-minus</v-icon>
           </v-btn>
         </v-flex>
         <v-flex xs12>

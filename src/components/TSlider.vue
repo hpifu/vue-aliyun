@@ -36,7 +36,8 @@ export default {
         { title: "智能媒体管理", icon: "mdi-emoticon", to: "/imm" },
         { title: "对象存储", icon: "mdi-emoticon", to: "/hash" },
         { title: "表格存储", icon: "mdi-emoticon", to: "/decimal" },
-        { title: "秘钥管理", icon: "mdi-emoticon", to: "/data" }
+        { title: "秘钥管理", icon: "mdi-emoticon", to: "/credential" },
+        { title: "地址管理", icon: "mdi-emoticon", to: "/endpoint" }
         // { divider: true },
       ]
     };
