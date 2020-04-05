@@ -55,7 +55,7 @@
             v-model="accessKeyID"
             outlined
             label="access key id"
-            :disabled="disable"
+            :disabled="readonly"
           ></v-text-field>
         </v-flex>
         <v-flex xs12>
@@ -63,12 +63,12 @@
             v-model="accessKeySecret"
             outlined
             label="access key secret"
-            :disabled="disable"
+            :disabled="readonly"
           ></v-text-field>
         </v-flex>
         <v-flex xs12>
           <v-select
-            v-if="this.disable"
+            v-if="this.readonly"
             v-model="credential"
             :items="credentials"
             label="credential"
@@ -80,7 +80,7 @@
             v-model="credential"
             outlined
             label="credential"
-            :disabled="disable"
+            :disabled="readonly"
           ></v-text-field>
         </v-flex>
       </v-layout>
@@ -119,10 +119,10 @@ export default {
       }
     },
     createCredential() {
-      this.disable = false;
+      this.readonly = false;
     },
     cancel() {
-      this.disable = true;
+      this.readonly = true;
     },
     async saveCredential() {
       try {
@@ -138,7 +138,7 @@ export default {
           }
         );
         console.log(res);
-        this.disable = true;
+        this.readonly = true;
         this.loadCredential();
       } catch (err) {
         console.log(err);
@@ -154,7 +154,7 @@ export default {
           }
         );
         console.log(res);
-        this.disable = true;
+        this.readonly = true;
         this.loadCredential();
       } catch (err) {
         console.log(err);
@@ -163,7 +163,7 @@ export default {
   },
   watch: {
     credential: function(val) {
-      if (!this.disable) {
+      if (!this.readonly) {
         return;
       }
       axios
@@ -180,7 +180,7 @@ export default {
   },
   data: function() {
     return {
-      disable: true,
+      readonly: true,
       credential: null,
       credentials: [],
       accessKeyID: "",
